@@ -1,0 +1,80 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* debug */
+    background: rgb(236, 107, 107);
+}    
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+/* LAYOUT */
+.container{
+    display: flex;   
+    width: 70%;
+    background-color: white;
+    height: 90%;
+}
+
+/* NAV-BAR LATERALE*/
+aside{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 35%;
+    border:1px solid red;
+    z-index: 20;
+
+}
+
+
+/* TOP-BAR */
+.top-bar{
+    position: absolute;
+    width: 70%;
+    overflow: auto;
+    background-color: rgb(230, 230, 230);
+    opacity: 0.9;
+    z-index: 10;
+    height: 100px;
+    /* debug */
+    border: 1px solid red;
+}
+
+
+
+/* PARTE DX */
+main{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 65%;
+    padding-top: 100px;
+}
+
+
+/* SECTION CHAT-BOX */
+.chat-box{
+    flex-grow: 1;
+    max-height:100% ;
+    padding:120px 0 0 0;
+    overflow-y: auto;
+    /* debug */
+    border: 2px solid blue;
+}
+
+/* SECTION WRITE MESSAGE */
+.text-area{
+    height:100px;
+    /* debug */
+    border: 2px solid black;
+
+}
