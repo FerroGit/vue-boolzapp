@@ -10,7 +10,8 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(to bottom,rgb(16, 168, 105) 15%,rgb(219, 209, 200) 15%,rgb(219, 209, 200) 85%)   
+    background: linear-gradient(to bottom,#00bfa5 15%, #dfebee 15%,#dfebee 85%);  
+    scrollbar-color: rgba(245, 245, 245, 0.459) transparent;
 }    
 
 a{
@@ -29,8 +30,9 @@ img{
 
 /* LAYOUT */
 .container{
-    display: flex;   
-    width: 70%;
+    display: flex;
+    position: relative;   
+    width: 85%;
     background-color: white;
     height: 90%;
 }
@@ -129,11 +131,11 @@ aside{
     display: flex;
     flex-direction: column;
     overflow-y: auto;
-
 }
 
 .chat-utente{
     display: flex;
+    position: relative;
     border-bottom: 1px solid rgb(245, 245, 245);
 
 }
@@ -149,6 +151,7 @@ aside{
 
 .text-chatUtente{
     padding: 10px 0 0 5px;
+    cursor: pointer;
 }
 
 .text-chatUtente p:last-child{
@@ -160,6 +163,14 @@ aside{
     white-space: nowrap;
 }
 
+.data-timing{
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    font-size: 12px;
+    color: rgb(98, 98, 98);
+    cursor: pointer;
+}
 
 /* TOP-BAR */
 .top-bar{
@@ -167,18 +178,19 @@ aside{
     justify-content: space-between;
     align-items: center;
     position: absolute;
-    width: 70%;
+    width: 100%;
     background-color: rgb(230, 230, 230);
     opacity: 0.9;
     z-index: 10;
     height: 76px;
+    padding-left: 36%;
 }
 
 .chat-open{
     display: flex;
-    padding-left: 490px;
     justify-content: start;
     align-items: center;
+    cursor: pointer;
 }
 
 .chat-open img{
@@ -193,17 +205,10 @@ aside{
     font-size: 12px;
     color: rgb(98, 98, 98);
 }
-/* PARTE DX */
-main{
-    display: flex;
-    flex-direction: column;
-    flex-basis: 65%;
-    padding-top: 76px;
-    background-image: url("../img/mine.png");
-}
 
 .icon-openChat{
     margin-right: 10px;
+    flex-wrap: nowrap;
 }
 
 .icon-openChat i{
@@ -213,17 +218,73 @@ main{
 }
 
 
+/* PARTE DX */
+main{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    flex-basis: 65%;
+    padding-top: 76px;
+    background-image: url("../img/mine.png");
+}
+
+
 /* SECTION CHAT-BOX */
 .chat-box{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
     flex-grow: 1;
     max-height:100% ;
-    padding:120px 0 0 0;
     overflow-y: auto;
+}
+
+.message-user{
+    position: relative;
+    min-width: 200px;
+    max-width: 450px;
+    margin: 20px 40px 5px 0;
+    padding: 20px;
+    border-radius: 15px;
+    background-color:  #DCF8C6;
+    word-break: break-all;
+}
+.message-recived{
+    position: relative;
+    align-self: flex-start;
+    min-width: 200px;
+    max-width: 450px;
+    margin: 20px 0 5px 40px;
+    padding: 20px;
+    border-radius: 15px;
+    background-color:  rgba(253, 253, 253, 0.945);
+    word-break: break-all;
+}
+
+.chat{
+    top: auto;
+    bottom: 0;
 }
 
 /* SECTION WRITE MESSAGE */
 .text-area{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
     height:76px;
-    background: rgb(255, 246, 229);
+    background: #ECE5DD;
+}
 
+.fa-smile,
+.fa-microphone {
+    font-size: 25px;
+    color:  rgb(148, 148, 148);;
+}
+
+.text-area input{
+    min-width: 80%;
+    border: 1px solid #fff;
+    padding: 10px;
+    border-radius: 5px;
 }
