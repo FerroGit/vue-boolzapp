@@ -254,10 +254,6 @@ main{
     word-break: break-all;
 }
 
-.message:hover .fas.fa-chevron-down{
-    display: block;
-}
-
 .recived{
     align-self: flex-start;
     background: #fff;
@@ -271,7 +267,7 @@ main{
     display: none;
 }
 
-.message{
+.message:hover .fas.fa-chevron-down{
     display: block;
 }
 
@@ -290,7 +286,7 @@ main{
     background: #ffffff44;
     border: 1px solid #fff;
     filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.2));
-    display: none;
+    /* display: none; */
 }
 
 .user .dropdown{
@@ -333,7 +329,6 @@ li:hover{
     border-radius: 5px;
 }
 
-
 /* CURSOR HOVER */
 .logo,
 .icon i,
@@ -351,7 +346,6 @@ li:hover{
 }
 
 /* MEDIA QUERY */
-
 /* xs */
 @media  all and (max-width: 791px){
     .container                  {width: 100vw;}
@@ -376,7 +370,7 @@ li:hover{
 
     .user                       {margin-right: 20px;}
 
-    .dropdown                   {top: auto; bottom: -75px; background-color: black;}
+    .dropdown                   {top: auto; bottom: -75px; background-color: rgb(34, 34, 34);}
 
     .user .dropdown             {left: -100px; z-index: 5;}
     
