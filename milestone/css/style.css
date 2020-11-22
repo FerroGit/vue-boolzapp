@@ -68,7 +68,6 @@ aside{
 .logo{
     display: flex;
     align-items: center;
-    cursor: pointer;
 }
 
 .logo img{
@@ -84,7 +83,6 @@ aside{
 .icon i{
     padding: 0 10px;
     font-size: 25px;
-    cursor: pointer;
 }
 
 
@@ -94,7 +92,6 @@ aside{
     align-items: center;
     min-height: 85px;
     background: rgb(136, 222, 248);
-    cursor: pointer;
 }
 
 .notice-section i{
@@ -161,8 +158,6 @@ aside{
     align-items: center;
     margin: 10px;
     width: 55px;
-    cursor: pointer;
-
 }
 
 p strong:hover{
@@ -171,7 +166,6 @@ p strong:hover{
 
 .text-chatUtente{
     padding: 10px 0 0 5px;
-    cursor: pointer;
 }
 
 .text-chatUtente p:last-child{
@@ -189,9 +183,7 @@ p strong:hover{
     top: 15px;
     font-size: 12px;
     color: rgb(98, 98, 98);
-    cursor: pointer;
 }
-
 
 /* PARTE DX */
 main{
@@ -215,7 +207,6 @@ main{
     display: flex;
     justify-content: start;
     align-items: center;
-    cursor: pointer;
 }
 
 .chat-open img{
@@ -240,9 +231,7 @@ main{
 .icon-openChat i{
     padding: 0 10px;
     font-size: 25px;
-    cursor: pointer;
 }
-
 
 /* SECTION CHAT-ROOM */
 .chat-box{
@@ -254,7 +243,7 @@ main{
     overflow-y: auto;
 }
 
-.message-user{
+.message{
     position: relative;
     min-width: 200px;
     max-width: 450px;
@@ -263,19 +252,16 @@ main{
     border-radius: 15px;
     background-color:  #DCF8C6;
     word-break: break-all;
-    cursor: pointer;
 }
-.message-recived{
-    position: relative;
+
+.message:hover .fas.fa-chevron-down{
+    display: block;
+}
+
+.recived{
     align-self: flex-start;
-    min-width: 200px;
-    max-width: 450px;
+    background: #fff;
     margin: 20px 0 5px 40px;
-    padding: 20px;
-    border-radius: 15px;
-    background-color:  rgba(253, 253, 253, 0.945);
-    word-break: break-all;
-    cursor: pointer;
 }
 
 .fas.fa-chevron-down{
@@ -285,32 +271,38 @@ main{
     display: none;
 }
 
-.message-user:hover .fas.fa-chevron-down,
-.message-recived:hover .fas.fa-chevron-down{
+.message{
     display: block;
 }
 
-.message-user li,
-.message-recived li{
+.message li{
     list-style-type: none;
-    color: rgb(70, 70, 70);
-    cursor: pointer;
+    padding: 2px;
+    color: rgb(119, 119, 119);
 }
 
 .dropdown{
-  position: absolute;
-  top: 20px;
-  left: -180px;
-  font-size: 14px;
-  padding: 5px 20px 0 20px;
-  border-radius: 10px;
-  background: #e7e7e7;
-  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.2));
-  display: none;
+    position: absolute;
+    top: 15px;
+    font-size: 14px;
+    padding: 5px 20px 0 20px;
+    border-radius: 10px;
+    background: #ffffff44;
+    border: 1px solid #fff;
+    filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.2));
+    display: none;
 }
 
+.user .dropdown{
+    left: -180px;
+}
+
+.recived .dropdown{
+    right: -180px;
+} 
+
 li:hover{
-    color: rgb(114, 114, 114);;
+    color: rgb(255, 255, 255);;
 }
 
 .chat{
@@ -332,7 +324,6 @@ li:hover{
 .fa-microphone {
     font-size: 25px;
     color:  rgb(148, 148, 148);
-    cursor: pointer;
 }
 
 .text-area input{
@@ -342,6 +333,22 @@ li:hover{
     border-radius: 5px;
 }
 
+
+/* CURSOR HOVER */
+.logo,
+.icon i,
+.notice-section,
+.chat-utente img,
+.text-chatUtente,
+.data-timing,
+.chat-open,
+.icon-openChat i,
+.message,
+.message li,
+.fa-smile,
+.fa-microphone {
+    cursor: pointer;
+}
 
 /* MEDIA QUERY */
 
@@ -362,6 +369,18 @@ li:hover{
     .icon-openChat i            {font-size: 18px; padding: 5px;}
    
     .notice-section             {justify-content: center;}
+
+    .message                    {min-width: 110px; max-width: 150px;}
+    
+    .recived                    {margin-left: 20px;}
+
+    .user                       {margin-right: 20px;}
+
+    .dropdown                   {top: auto; bottom: -75px; background-color: black;}
+
+    .user .dropdown             {left: -100px; z-index: 5;}
+    
+    .recived .dropdown          {right: -100px; z-index: 5;}
    
     .text-area input            {width: 75%; margin: 0 5px; padding: 5px;}
    
@@ -376,3 +395,7 @@ li:hover{
     .data-timing                {top: auto; bottom: 0; left: auto; right: 0; max-width: 100px; word-break: break-all;}
     .chat                       {top: auto; bottom: 0; left: auto; right: 5px;}
 }
+
+
+
+
