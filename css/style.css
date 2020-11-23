@@ -143,17 +143,17 @@ aside{
     overflow-y: auto;
 }
 
-.chat-utente{
+.chat-section div:first-child{
     display: flex;
     position: relative;
     border-bottom: 1px solid rgb(245, 245, 245);
 }
 
-.chat-utente:hover{
+.chat-section:hover{
     background-color:  rgb(245, 245, 245);
 }
 
-.chat-utente img{
+.chat-section img{
     display: flex;
     align-items: center;
     margin: 10px;
@@ -168,7 +168,7 @@ p strong:hover{
     padding: 10px 0 0 5px;
 }
 
-.text-chatUtente p:last-child{
+.textpreview{
     font-size: 12px;
     color: rgb(98, 98, 98);
     max-width: 100px;
@@ -243,7 +243,8 @@ main{
     overflow-y: auto;
 }
 
-.message{
+.send,
+.recived{
     position: relative;
     min-width: 200px;
     max-width: 450px;
@@ -267,11 +268,13 @@ main{
     display: none;
 }
 
-.message:hover .fas.fa-chevron-down{
+.send:hover .fas.fa-chevron-down,
+.recived:hover .fas.fa-chevron-down{
     display: block;
 }
 
-.message li{
+.send li,
+.recived li{
     list-style-type: none;
     padding: 2px;
     color: rgb(119, 119, 119);
@@ -286,10 +289,14 @@ main{
     background: #ffffff44;
     border: 1px solid #fff;
     filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.2));
-    /* display: none; */
+    display: none;
 }
 
-.user .dropdown{
+.active{
+    display: block;
+}
+
+.send .dropdown{
     left: -180px;
 }
 
@@ -338,8 +345,10 @@ li:hover{
 .data-timing,
 .chat-open,
 .icon-openChat i,
-.message,
-.message li,
+.send,
+.recived,
+.send li,
+.recived li,
 .fa-smile,
 .fa-microphone {
     cursor: pointer;
@@ -364,15 +373,16 @@ li:hover{
    
     .notice-section             {justify-content: center;}
 
-    .message                    {min-width: 110px; max-width: 150px;}
+    .recived,
+    .send                       {min-width: 110px; max-width: 150px;}
     
     .recived                    {margin-left: 20px;}
 
-    .user                       {margin-right: 20px;}
+    .send                       {margin-right: 20px;}
 
     .dropdown                   {top: auto; bottom: -75px; background-color: rgb(34, 34, 34);}
 
-    .user .dropdown             {left: -100px; z-index: 5;}
+    .send .dropdown             {left: -100px; z-index: 5;}
     
     .recived .dropdown          {right: -100px; z-index: 5;}
    

@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <div class="container">
+    <div id="app" class="container">
                                     <!-- NAV-BAR LATERALE -->
         <aside>
             <!-- user section -->
@@ -55,50 +55,17 @@
 
             <!-- chats  section -->
             <div class="chat-section">
-                <div class="chat-utente">
-                    <img src="img/avatar_io.jpg" alt="#">
+                <div class="chat-utente" v-for="(contact, i) in contatti">
+                    <img :src="contact.img" alt="#">
                     <div class="text-chatUtente">
-                        <p><strong>Luiso Calcetto</strong></p>
-                        <p>Hai parlato con tua Moglie?</p>
+                        <p><strong class=""></strong>{{contact.nome}}</p>
+                        <p class="textpreview">{{contact.chat[contact.chat.length - 1].textChat}}</p>
                     </div>
                    <div class="data-timing">
-                        accesso ore 13.48
+                        {{contatti.dataChat}}   
                     </div>
                 </div>
-
-                <div class="chat-utente">
-                    <img src="img/avatar_6.jpg" alt="#">
-                    <div class="text-chatUtente">
-                        <p><strong>Arianno Idraulico</strong></p>
-                        <p>Se oggi non glielo dici è F-I-N-I-T-A !!!!!!</p>
-                    </div>
-                    <div class="data-timing">
-                        Online
-                    </div>
-                </div>
-
-                <div class="chat-utente">
-                    <img src="img/avatar_7.jpg" alt="#">
-                    <div class="text-chatUtente">
-                        <p><strong>Fabio</strong></p>
-                        <p>Oggi ho portato giu il cane</p>
-                    </div>
-                    <div class="data-timing">
-                         accesso ore 10.30
-                    </div>
-                </div>
-
-                <div class="chat-utente">
-                    <img src="img/avatar_8.jpg" alt="#">
-                    <div class="text-chatUtente">
-                        <p><strong>Samuele</strong></p>
-                        <p>Che voi</p>
-                    </div>
-                    <div class="data-timing">
-                         accesso ore 14.02
-                    </div>
-                </div>
-
+               
             </div>
         </aside>
 
@@ -108,10 +75,10 @@
                                     <!-- TOP BAR  -->
             <section class="top-bar">
                 <div class="chat-open">
-                    <img src="img/avatar_8.jpg" alt="">
+                    <img :src="contatti[indexContatti].img" alt="">
                     <div class="text-chatAperta">
-                        <p><strong>Samuele</strong></p>
-                        <p>Ultimo accesso oggi</p>
+                        <p><strong>{{contatti[indexContatti].nome}}</strong></p>
+                        <p>{{contatti[indexContatti].data}}</p>
                     </div>
                 </div>
                 
@@ -125,10 +92,10 @@
                                     <!-- SECTION CHAT ROOM  -->
             <section class="chat-box"> 
 
-                <div class="message user">
-                   <span>Bellaaaaaaaaaaaa</span>
+                <div v-for="(element,index) in contatti[indexContatti].chat" :class="ele.typeMessage" >
+                   <span>{{element.textChat}}</span>
                     <div class="data-timing chat">
-                        inviato ore 11.50
+                        {{element.dataChat}}
                     </div>
                     <div class="info-message">
                         <i class="fas fa-chevron-down"></i>
@@ -140,51 +107,6 @@
                     </ul>
                 </div>
 
-                <div class="message user">
-                    <span>Ao</span>
-                    <div class="data-timing chat">
-                        inviato ore 12.40
-                    </div>
-                    <div class="info-message">
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <ul class="dropdown">
-                        <li>Info Messaggio </li>
-                        <li>Rispondi</li>
-                        <li>Cancella Messaggio</li>
-                    </ul>
-                </div>
-
-                <div class="message recived">
-                    <span>Che voi</span>
-                    <div class="data-timing chat">
-                        inviato ore 13.05
-                    </div>
-                    <div class="info-message">
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <ul class="dropdown">
-                        <li>Info Messaggio </li>
-                        <li>Rispondi</li>
-                        <li>Cancella Messaggio</li>
-                    </ul>
-                </div>
-
-                <div class="message user">
-                    <span>Birretta dal bangla alle 4?</span>
-                    <div class="data-timing chat">
-                        inviato ore 14.00
-                    </div>
-                    <div class="info-message">
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <ul class="dropdown">
-                        <li>Info Messaggio </li>
-                        <li>Rispondi</li>
-                        <li>Cancella Messaggio</li>
-                    </ul>
-                </div>
-                
             </section>
 
                                     <!-- SECTION WRITE MESSAGE  -->
