@@ -84,4 +84,3 @@ var app = new Vue({
             this.indexContatti = indice;
         }
     }
-});
