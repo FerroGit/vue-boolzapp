@@ -149,11 +149,11 @@ aside{
 .chat-section .contatto{
     display: flex;
     position: relative;
-    border-bottom: 1px solid rgb(245, 245, 245);
+    border-bottom: 1px solid rgb(235, 235, 235);
 }
 
-.chat-section:hover{
-    background-color:  rgb(245, 245, 245);
+.contatto:hover{
+    background-color:  rgb(211, 211, 211);
 }
 
 .chat-section img{
@@ -180,10 +180,15 @@ p strong:hover{
 
 .data-timing{
     position: absolute;
+    right: 10px;
+    top: 12px;
     font-size: 12px;
     color: rgb(98, 98, 98);
 }
 
+.active{
+    background-color: rgb(211, 211, 211);
+}
 /* PARTE DX */
 main{
     width: 100%;
@@ -305,6 +310,7 @@ li:hover{
 
 .chat{
     position: absolute;
+    top: auto;
     bottom: 5px;
     right: 5px;
 }
@@ -400,156 +406,3 @@ li:hover{
 
 
 
-aside{
-    display: flex;
-    flex-direction: column;
-    width: 35%;
-    border-right: 1px solid rgb(173, 173, 173);
-    z-index: 20;
-}
-
-
- sezione utente 
-.utente{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    padding: 0 10px;
-    height: 76px;
-    background-color: rgb(230, 230, 230);
-}
-
-.logo{
-    display: flex;
-    align-items: center;
-}
-
-.logo img{
-    margin-right: 10px;
-    width: 55px;
-}
-
-.icon{
-    display: flex;
-    flex-wrap: nowrap;
-}
-
-.icon i{
-    padding: 0 10px;
-    font-size: 25px;
-}
-
-
-/* sezione notice */
-.notice-section{
-    display: flex;
-    align-items: center;
-    min-height: 85px;
-    background: rgb(136, 222, 248);
-}
-
-.notice-section i{
-    margin-left: 15px;
-    padding: 15px 10px;
-    font-size: 25px;
-    background: #fff;
-    border-radius: 50%;
-    color: rgb(136, 222, 248);
-}
-
-/* search section  */
-.text-notice{
-    padding-left: 5px;
-}
-
-.text-notice p:last-child{
-    font-size: 12px;
-    color: rgb(98, 98, 98);
-    text-decoration: underline;
-}
-
-.search-section{
-    text-align: center;
-    background:rgb(245, 245, 245);
-}
-
-.container-search{
-     background: #fff;
-     margin: 10px;
-}
-
-.search-section input{
-    width: 90%;
-    padding: 5px 0 5px 20px;
-    font-size: 12px;
-    border: 1px solid #fff;
-}
-
-.search-section i{
-    background: #fff;
-}
-
-
-/* chats section  */
-.chat-section{
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-}
-
-.chat-section div:first-child{
-    display: flex;
-    position: relative;
-    border-bottom: 1px solid rgb(245, 245, 245);
-}
-
-.chat-section:hover{
-    background-color:  rgb(245, 245, 245);
-}
-
-.chat-section img{
-    margin: 10px;
-    width: 55px;
-}
-
-p strong:hover{
-    text-decoration: underline;
-}
-
-.text-chatUtente{
-    padding: 10px 0 0 5px;
-}
-
-.textpreview{
-    font-size: 12px;
-    color: rgb(98, 98, 98);
-    max-width: 100px;
-    text-overflow: ellipsis;
-    overflow-x: hidden;
-    white-space: nowrap;
-}
-
-.listChat{
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-.listChat img{
-    margin-right: 10px;
-}
-
-.active{
-    position: relative;
-    background-color: lightgrey;
-
-}
-
-.data-timing{
-    position: absolute;
-    right: 10px;
-    top: 15px;
-    font-size: 12px;
-    color: rgb(98, 98, 98);
-}
