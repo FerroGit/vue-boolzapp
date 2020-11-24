@@ -75,7 +75,7 @@
 
 
             <!--PARTE DX  -->
-            <main>
+            <main >
                 <!-- TOP BAR  -->
                 <section class="top-bar">
                     <div class="chat-open">
@@ -94,9 +94,9 @@
                 </section>
 
                 <!-- SECTION CHAT ROOM  -->
-                <section class="chat-box">
+                <section id="container-chat" class="chat-box">
 
-                    <div v-for="(element,index) in contatti[indexContatti].chat" :class="element.typeMessage">
+                    <div  v-for="(element,index) in contatti[indexContatti].chat" :class="element.typeMessage">
                         <span>{{element.textChat}}</span>
                         <div class="data-timing chat">
                             {{element.dataChat}}

@@ -91,7 +91,7 @@ var app = new Vue({
                 typeMessage: "send"
             });
             this.textArea = "";
-
+            
             setTimeout( () => {
                 this.contatti[this.indexContatti].chat.push({
                     textChat: this.defaultMessage[Math.floor(Math.random() * this.defaultMessage.length)],
@@ -99,8 +99,12 @@ var app = new Vue({
                     typeMessage: 'recived'
                 });
             }, 1000);
+            this.scrollToEnd();
+        },
+        scrollToEnd: function () {
+            var overflow = this.$el.querySelector("#container-chat");
+            overflow.scrollTop = overflow.scrollHeight;
         },
         
-
     },
 });    
