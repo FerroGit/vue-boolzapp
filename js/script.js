@@ -10,7 +10,7 @@ var app = new Vue({
                 img: "img/avatar_io.jpg",
                 data: "ultimo accesso 13.48",
                 chat: [{
-                    textChat: "Hai parlato con tuaa moglie?",
+                    textChat: "Hai parlato con tua moglie?",
                     dataChat: "13.05",
                     typeMessage: "recived"
                 },
@@ -84,4 +84,4 @@ var app = new Vue({
             this.indexContatti = indice;
         }
     }
-});
+});    
