@@ -116,7 +116,9 @@
                 <!-- SECTION WRITE MESSAGE  -->
                 <section class="text-area">
                     <i class="far fa-smile"></i>
-                    <input type="text" spaceholder="scrivi un messaggio" @keydown.enter="addMessage">
+                    <input type="text" spaceholder="scrivi un messaggio" 
+                    v-model="textArea" 
+                    @keydown.enter="addMessage">
                     <i class="fas fa-microphone"></i>
                 </section>
 

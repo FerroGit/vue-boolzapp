@@ -84,7 +84,20 @@ var app = new Vue({
             this.indexContatti = indice;
         },
         addMessage: function () {
-        
-    }
+            this.contatti[this.indexContatti].chat.push({
+                textChat: this.textArea,
+                dataChat: "16.02",
+                typeMessage: "send"
+            });
+            this.textArea = "";
+
+            setTimeout( () => {
+                this.contatti[this.indexContatti].chat.push({
+                    textChat: "ok",
+                    dataChat: "16.02",
+                    typeMessage: 'recived'
+                });
+            }, 1000);
+        }          
     },
 });    
