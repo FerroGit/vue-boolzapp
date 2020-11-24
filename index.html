@@ -58,15 +58,15 @@
                 <!-- chats  section -->
                 <div class="chat-section">
                     <div :class="['contatto', index === indexContatti ? 'active' : '']" 
-                        v-for="(contact, index) in contatti"
+                        v-for="(element, index) in contatti"
                         @click = "contactActive(index)">
-                        <img :src="contact.img" alt="#">
+                        <img :src="element.img" alt="#">
                         <div class="text-chatUtente">
-                            <p><strong class=""></strong>{{contact.nome}}</p>
-                            <p class="textpreview">{{contact.chat[contact.chat.length - 1].textChat}}</p>
+                            <p><strong class=""></strong>{{element.nome}}</p>
+                            <p class="textpreview">{{element.chat[element.chat.length - 1].textChat}}</p>
                         </div>
                         <div class="data-timing">
-                            {{contact.chat[contact.chat.length - 1].dataChat}}
+                            {{element.chat[element.chat.length - 1].dataChat}}
                         </div>
                     </div>
 

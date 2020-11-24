@@ -203,7 +203,7 @@ main{
     align-items: center;
     justify-content: space-between;
     padding: 0 10px;
-    height:76px;
+    min-height:76px;
     background-color: #ededed;
 }
 

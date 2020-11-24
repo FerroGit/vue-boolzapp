@@ -2,6 +2,7 @@ var app = new Vue({
     el: '#app',
 
     data: {
+        defaultMessage: ["ok", "vabene", "ci sentiamo dopo"],
         indexContatti: 0,
         textArea: "",
         contatti: [
@@ -93,11 +94,13 @@ var app = new Vue({
 
             setTimeout( () => {
                 this.contatti[this.indexContatti].chat.push({
-                    textChat: "ok",
+                    textChat: this.defaultMessage[Math.floor(Math.random() * this.defaultMessage.length)],
                     dataChat: "16.02",
                     typeMessage: 'recived'
                 });
             }, 1000);
-        }          
+        },
+        
+
     },
 });    
