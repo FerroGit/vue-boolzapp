@@ -2,6 +2,7 @@ var app = new Vue({
     el: '#app',
 
     data: {
+        searchQuery: null,
         defaultMessage: ["ok", "vabene", "ci sentiamo dopo", "ho da fare, ti scrivo dopo"],
         indexContatti: 0,
         textArea: "",
@@ -111,4 +112,16 @@ var app = new Vue({
         },
         
     },
+    computed:{
+        resultQuery() {
+            if (this.searchQuery) {
+                return this.contatti.filter((item) => {
+                    return this.searchQuery.toLowerCase().split(' ').every(v => item.title.toLowerCase().includes(v))
+                })
+            } else {
+                return this.contatti;
+            }
+            
+        }
+    }
 });    
