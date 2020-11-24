@@ -2,7 +2,7 @@ var app = new Vue({
     el: '#app',
 
     data: {
-        defaultMessage: ["ok", "vabene", "ci sentiamo dopo"],
+        defaultMessage: ["ok", "vabene", "ci sentiamo dopo", "ho da fare, ti scrivo dopo"],
         indexContatti: 0,
         textArea: "",
         contatti: [
@@ -92,18 +92,21 @@ var app = new Vue({
             });
             this.textArea = "";
             
+            this.scrollToEnd();
             setTimeout( () => {
                 this.contatti[this.indexContatti].chat.push({
                     textChat: this.defaultMessage[Math.floor(Math.random() * this.defaultMessage.length)],
                     dataChat: "16.02",
                     typeMessage: 'recived'
                 });
+                this.scrollToEnd();
             }, 1000);
-            this.scrollToEnd();
         },
         scrollToEnd: function () {
-            var overflow = this.$el.querySelector("#container-chat");
-            overflow.scrollTop = overflow.scrollHeight;
+            setTimeout( () => {
+                var overflow = this.$el.querySelector("#container-chat");
+                overflow.scrollTop = overflow.scrollHeight;
+            }, 0) 
         },
         
     },
