@@ -50,7 +50,7 @@
                     <form action="/action_page.php">
                         <div class="container-search">
                             <a href=""><i class="fa fa-search"></i></a>
-                            <input type="search" placeholder="Cerca o inizia una nuova chat" class="form-control"v-model="searchQuery" >
+                            <input  type="text" placeholder="Cerca o inizia una nuova chat" class="form-control" v-model="searchQuery" >
                         </div>
                     </form>
                 </div>
@@ -58,7 +58,7 @@
                 <!-- chats  section -->
                 <div class="chat-section">
                     <div :class="['contatto', index === indexContatti ? 'active' : '']" 
-                        v-for="(element, index) in contatti"
+                        v-for="(element, index) in resultQuery"
                         @click = "contactActive(index)">
                         <img :src="element.img" alt="#">
                         <div class="text-chatUtente">
