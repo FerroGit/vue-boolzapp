@@ -5,6 +5,7 @@
     font-family: 'Open Sans', sans-serif;
 }
 
+
 body{
     display: flex;
     justify-content: center;
@@ -44,6 +45,7 @@ img{
     height: 90%;
 }
 
+
 /* NAV-BAR LATERALE*/
 aside{
     display: flex;
@@ -54,7 +56,7 @@ aside{
 }
 
 
-/* sezione utente */
+/*  sezione utente  */
 .utente{
     display: flex;
     justify-content: space-between;
@@ -103,7 +105,7 @@ aside{
     color: rgb(136, 222, 248);
 }
 
-/* search section */
+/* search section  */
 .text-notice{
     padding-left: 5px;
 }
@@ -136,26 +138,24 @@ aside{
 }
 
 
-/* chats section */
+/* chats section  */
 .chat-section{
     display: flex;
     flex-direction: column;
     overflow-y: auto;
 }
 
-.chat-section div:first-child{
+.chat-section .contatto{
     display: flex;
     position: relative;
-    border-bottom: 1px solid rgb(245, 245, 245);
+    border-bottom: 1px solid rgb(235, 235, 235);
 }
 
-.chat-section:hover{
-    background-color:  rgb(245, 245, 245);
+.contatto:hover{
+    background-color:  rgb(211, 211, 211);
 }
 
 .chat-section img{
-    display: flex;
-    align-items: center;
     margin: 10px;
     width: 55px;
 }
@@ -180,11 +180,14 @@ p strong:hover{
 .data-timing{
     position: absolute;
     right: 10px;
-    top: 15px;
+    top: 12px;
     font-size: 12px;
     color: rgb(98, 98, 98);
 }
 
+.active{
+    background-color: rgb(211, 211, 211);
+}
 /* PARTE DX */
 main{
     width: 100%;
@@ -292,10 +295,6 @@ main{
     display: none;
 }
 
-.active{
-    display: block;
-}
-
 .send .dropdown{
     left: -180px;
 }
@@ -309,8 +308,10 @@ li:hover{
 }
 
 .chat{
+    position: absolute;
     top: auto;
-    bottom: 0;
+    bottom: 5px;
+    right: 5px;
 }
 
 /* SECTION WRITE MESSAGE */
@@ -399,7 +400,3 @@ li:hover{
     .data-timing                {top: auto; bottom: 0; left: auto; right: 0; max-width: 100px; word-break: break-all;}
     .chat                       {top: auto; bottom: 0; left: auto; right: 5px;}
 }
-
-
-
-

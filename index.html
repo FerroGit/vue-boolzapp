@@ -7,8 +7,8 @@
     <title>Boolzapp</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='css/style.css'>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
@@ -17,7 +17,7 @@
 
 <body>
     <div id="app" class="container">
-                                    <!-- NAV-BAR LATERALE -->
+        <!-- NAV-BAR LATERALE -->
         <aside>
             <!-- user section -->
             <div class="utente">
@@ -31,7 +31,7 @@
                     <i class="fas fa-circle-notch"></i>
                     <i class="fas fa-comment-alt"></i>
                     <i class="fas fa-ellipsis-v"></i>
-                </div>    
+                </div>
             </div>
 
             <!-- notice section -->
@@ -39,7 +39,9 @@
                 <i class="fas fa-bell-slash"></i>
                 <div class="text-notice">
                     <p><strong>Ricevi notifiche di nuovi messaggi</strong></p>
-                    <a href="#"><p>Attiva notifiche desktop</p></a>
+                    <a href="#">
+                        <p>Attiva notifiche desktop</p>
+                    </a>
                 </div>
             </div>
 
@@ -55,24 +57,26 @@
 
             <!-- chats  section -->
             <div class="chat-section">
-                <div class="chat-utente" v-for="(contact, i) in contatti">
+                <div :class="['contatto', index === indexContatti ? 'active' : '']" 
+                    v-for="(contact, index) in contatti"
+                    @click="contactActive(index)">
                     <img :src="contact.img" alt="#">
                     <div class="text-chatUtente">
                         <p><strong class=""></strong>{{contact.nome}}</p>
                         <p class="textpreview">{{contact.chat[contact.chat.length - 1].textChat}}</p>
                     </div>
-                   <div class="data-timing">
-                        {{contatti.dataChat}}   
+                    <div class="data-timing">
+                        {{contact.chat[contact.chat.length - 1].dataChat}}
                     </div>
                 </div>
-               
+
             </div>
         </aside>
 
-        
+
         <!--PARTE DX  -->
         <main>
-                                    <!-- TOP BAR  -->
+            <!-- TOP BAR  -->
             <section class="top-bar">
                 <div class="chat-open">
                     <img :src="contatti[indexContatti].img" alt="">
@@ -81,19 +85,19 @@
                         <p>{{contatti[indexContatti].data}}</p>
                     </div>
                 </div>
-                
+
                 <div class="icon-openChat">
                     <i class="fa fa-search"></i></a>
                     <i class="fas fa-paperclip"></i>
-                <i class="fas fa-ellipsis-v"></i>
+                    <i class="fas fa-ellipsis-v"></i>
                 </div>
             </section>
 
-                                    <!-- SECTION CHAT ROOM  -->
-            <section class="chat-box"> 
+            <!-- SECTION CHAT ROOM  -->
+            <section class="chat-box">
 
-                <div v-for="(element,index) in contatti[indexContatti].chat" :class="ele.typeMessage" >
-                   <span>{{element.textChat}}</span>
+                <div v-for="(element,index) in contatti[indexContatti].chat" :class="element.typeMessage">
+                    <span>{{element.textChat}}</span>
                     <div class="data-timing chat">
                         {{element.dataChat}}
                     </div>
@@ -109,15 +113,16 @@
 
             </section>
 
-                                    <!-- SECTION WRITE MESSAGE  -->
-            <section class="text-area"> 
+            <!-- SECTION WRITE MESSAGE  -->
+            <section class="text-area">
                 <i class="far fa-smile"></i>
                 <input type="text" spaceholder="scrivi un messaggio">
                 <i class="fas fa-microphone"></i>
             </section>
 
         </main>
-    <script src='js/script.js'></script>
+        <script src='js/script.js'></script>
+    </div>
 </body>
 
 </html>
