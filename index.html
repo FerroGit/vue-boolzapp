@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -16,114 +15,113 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 </head>
 
-<body>
-    <div id="app" class="container">
-        <!-- NAV-BAR LATERALE -->
-        <aside>
-            <!-- user section -->
-            <div class="utente">
-                <div class="logo">
-                    <img src="img/avatar_1.jpg" alt="avatar">
-                    <span><strong>Lorenzo Ferretti</strong></span>
-                </div>
-
-
-                <div class="icon">
-                    <i class="fas fa-circle-notch"></i>
-                    <i class="fas fa-comment-alt"></i>
-                    <i class="fas fa-ellipsis-v"></i>
-                </div>
-            </div>
-
-            <!-- notice section -->
-            <div class="notice-section">
-                <i class="fas fa-bell-slash"></i>
-                <div class="text-notice">
-                    <p><strong>Ricevi notifiche di nuovi messaggi</strong></p>
-                    <a href="#">
-                        <p>Attiva notifiche desktop</p>
-                    </a>
-                </div>
-            </div>
-
-            <!-- search section -->
-            <div class="search-section">
-                <form action="/action_page.php">
-                    <div class="container-search">
-                        <a href=""><i class="fa fa-search"></i></a>
-                        <input type="search" placeholder="Cerca o inizia una nuova chat">
+    <body>
+        <div id="app" class="container">
+            <!-- NAV-BAR LATERALE -->
+            <aside>
+                <!-- user section -->
+                <div class="utente">
+                    <div class="logo">
+                        <img src="img/avatar_1.jpg" alt="avatar">
+                        <span><strong>Lorenzo Ferretti</strong></span>
                     </div>
-                </form>
-            </div>
 
-            <!-- chats  section -->
-            <div class="chat-section">
-                <div :class="['contatto', index === indexContatti ? 'active' : '']" 
-                     v-for="(contact, index) in contatti"
-                     @click = "contactActive(index)">
-                    <img :src="contact.img" alt="#">
-                    <div class="text-chatUtente">
-                        <p><strong class=""></strong>{{contact.nome}}</p>
-                        <p class="textpreview">{{contact.chat[contact.chat.length - 1].textChat}}</p>
-                    </div>
-                    <div class="data-timing">
-                        {{contact.chat[contact.chat.length - 1].dataChat}}
+
+                    <div class="icon">
+                        <i class="fas fa-circle-notch"></i>
+                        <i class="fas fa-comment-alt"></i>
+                        <i class="fas fa-ellipsis-v"></i>
                     </div>
                 </div>
 
-            </div>
-        </aside>
-
-
-        <!--PARTE DX  -->
-        <main>
-            <!-- TOP BAR  -->
-            <section class="top-bar">
-                <div class="chat-open">
-                    <img :src="contatti[indexContatti].img" alt="">
-                    <div class="text-chatAperta">
-                        <p><strong>{{contatti[indexContatti].nome}}</strong></p>
-                        <p>{{contatti[indexContatti].data}}</p>
+                <!-- notice section -->
+                <div class="notice-section">
+                    <i class="fas fa-bell-slash"></i>
+                    <div class="text-notice">
+                        <p><strong>Ricevi notifiche di nuovi messaggi</strong></p>
+                        <a href="#">
+                            <p>Attiva notifiche desktop</p>
+                        </a>
                     </div>
                 </div>
 
-                <div class="icon-openChat">
-                    <i class="fa fa-search"></i></a>
-                    <i class="fas fa-paperclip"></i>
-                    <i class="fas fa-ellipsis-v"></i>
-                </div>
-            </section>
-
-            <!-- SECTION CHAT ROOM  -->
-            <section class="chat-box">
-
-                <div v-for="(element,index) in contatti[indexContatti].chat" :class="element.typeMessage">
-                    <span>{{element.textChat}}</span>
-                    <div class="data-timing chat">
-                        {{element.dataChat}}
-                    </div>
-                    <div class="info-message">
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <ul class="dropdown">
-                        <li>Info Messaggio </li>
-                        <li>Rispondi</li>
-                        <li>Cancella Messaggio</li>
-                    </ul>
+                <!-- search section -->
+                <div class="search-section">
+                    <form action="/action_page.php">
+                        <div class="container-search">
+                            <a href=""><i class="fa fa-search"></i></a>
+                            <input type="search" placeholder="Cerca o inizia una nuova chat">
+                        </div>
+                    </form>
                 </div>
 
-            </section>
+                <!-- chats  section -->
+                <div class="chat-section">
+                    <div :class="['contatto', index === indexContatti ? 'active' : '']" 
+                        v-for="(contact, index) in contatti"
+                        @click = "contactActive(index)">
+                        <img :src="contact.img" alt="#">
+                        <div class="text-chatUtente">
+                            <p><strong class=""></strong>{{contact.nome}}</p>
+                            <p class="textpreview">{{contact.chat[contact.chat.length - 1].textChat}}</p>
+                        </div>
+                        <div class="data-timing">
+                            {{contact.chat[contact.chat.length - 1].dataChat}}
+                        </div>
+                    </div>
 
-            <!-- SECTION WRITE MESSAGE  -->
-            <section class="text-area">
-                <i class="far fa-smile"></i>
-                <input type="text" spaceholder="scrivi un messaggio">
-                <i class="fas fa-microphone"></i>
-            </section>
+                </div>
+            </aside>
 
-        </main>
-        <script src='js/script.js'></script>
-    </div>    
-</body>
 
+            <!--PARTE DX  -->
+            <main>
+                <!-- TOP BAR  -->
+                <section class="top-bar">
+                    <div class="chat-open">
+                        <img :src="contatti[indexContatti].img" alt="">
+                        <div class="text-chatAperta">
+                            <p><strong>{{contatti[indexContatti].nome}}</strong></p>
+                            <p>{{contatti[indexContatti].data}}</p>
+                        </div>
+                    </div>
+
+                    <div class="icon-openChat">
+                        <i class="fa fa-search"></i></a>
+                        <i class="fas fa-paperclip"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                </section>
+
+                <!-- SECTION CHAT ROOM  -->
+                <section class="chat-box">
+
+                    <div v-for="(element,index) in contatti[indexContatti].chat" :class="element.typeMessage">
+                        <span>{{element.textChat}}</span>
+                        <div class="data-timing chat">
+                            {{element.dataChat}}
+                        </div>
+                        <div class="info-message">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <ul class="dropdown">
+                            <li>Info Messaggio </li>
+                            <li>Rispondi</li>
+                            <li>Cancella Messaggio</li>
+                        </ul>
+                    </div>
+
+                </section>
+
+                <!-- SECTION WRITE MESSAGE  -->
+                <section class="text-area">
+                    <i class="far fa-smile"></i>
+                    <input type="text" spaceholder="scrivi un messaggio" @keydown.enter="addMessage">
+                    <i class="fas fa-microphone"></i>
+                </section>
+
+            </main>
+            <script src='js/script.js'></script>
+        </div>    
+    </body>
 </html>

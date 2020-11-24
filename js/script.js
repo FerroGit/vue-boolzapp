@@ -82,6 +82,9 @@ var app = new Vue({
     methods: {
         contactActive: function (indice) {
             this.indexContatti = indice;
-        }
+        },
+        addMessage: function () {
+        
     }
+    },
 });    
