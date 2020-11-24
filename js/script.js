@@ -83,6 +83,7 @@ var app = new Vue({
     methods: {
         contactActive: function (indice) {
             this.indexContatti = indice;
+            this.scrollToEnd();
         },
         addMessage: function () {
             this.contatti[this.indexContatti].chat.push({
