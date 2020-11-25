@@ -2,6 +2,8 @@ var app = new Vue({
     el: '#app',
 
     data: {
+        searchQuery: '',
+        defaultMessage: ["ok", "vabene", "ci sentiamo dopo", "ho da fare, ti scrivo dopo"],
         indexContatti: 0,
         textArea: "",
         contatti: [
@@ -82,6 +84,44 @@ var app = new Vue({
     methods: {
         contactActive: function (indice) {
             this.indexContatti = indice;
+            this.scrollToEnd();
+        },
+        addMessage: function () {
+            this.contatti[this.indexContatti].chat.push({
+                textChat: this.textArea,
+                dataChat: "16.02",
+                typeMessage: "send"
+            });
+            this.textArea = "";
+
+            this.scrollToEnd();
+            setTimeout(() => {
+                this.contatti[this.indexContatti].chat.push({
+                    textChat: this.defaultMessage[Math.floor(Math.random() * this.defaultMessage.length)],
+                    dataChat: "16.02",
+                    typeMessage: 'recived'
+                });
+                this.scrollToEnd();
+            }, 1000);
+        },
+        scrollToEnd: function () {
+            setTimeout(() => {
+                var overflow = this.$el.querySelector("#container-chat");
+                overflow.scrollTop = overflow.scrollHeight;
+            }, 0)
+        },
+
+    },
+    computed: {
+        resultQuery() {
+            if (this.searchQuery) {
+                return this.contatti.filter((element) => {
+                    return this.searchQuery.toLowerCase().split(' ').every(v => element.nome.toLowerCase().includes(v))
+                })
+            } else {
+                return this.contatti;
+            }
+
         }
     }
 });    
