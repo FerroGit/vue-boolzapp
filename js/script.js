@@ -2,7 +2,7 @@ var app = new Vue({
     el: '#app',
 
     data: {
-        searchQuery: '',
+        searchQuery: null,
         defaultMessage: ["ok", "vabene", "ci sentiamo dopo", "ho da fare, ti scrivo dopo"],
         indexContatti: 0,
         textArea: "",
@@ -90,8 +90,8 @@ var app = new Vue({
             this.contatti[this.indexContatti].chat.push({
                 textChat: this.textArea,
                 dataChat: "16.02",
-                typeMessage: "send"
-            });
+                typeMessage: "send",
+            });  
             this.textArea = "";
             
             this.scrollToEnd();
@@ -116,12 +116,11 @@ var app = new Vue({
         resultQuery() {
             if (this.searchQuery) {
                 return this.contatti.filter((element) => {
-                    return this.searchQuery.toLowerCase().split(' ').every(v => element.nome.toLowerCase().includes(v))
+                    return this.searchQuery.toLowerCase().split().every(name => element.nome.toLowerCase().includes(name));
                 })
             } else {
-                return this.contatti;
+                return this.contatti; 
             }
-            
         }
     }
-});    
+});
