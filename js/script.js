@@ -10,6 +10,7 @@ var app = new Vue({
             {
                 nome: "Luiso Calcetto",
                 img: "img/avatar_io.jpg",
+                /* display: true, */
                 data: "ultimo accesso 13.48",
                 chat: [{
                     textChat: "Hai parlato con tua moglie?",
@@ -26,6 +27,7 @@ var app = new Vue({
             {
                 nome: "Arianno Barbiere",
                 img: "img/avatar_6.jpg",
+                /* display: true, */
                 data: "Online",
                 chat: [{
                     textChat: "Se oggi non glielo dici è F-I-N-I-T-A !!!!",
@@ -42,6 +44,7 @@ var app = new Vue({
             {
                 nome: "Fabio",
                 img: "img/avatar_7.jpg",
+                /* display: true, */
                 data: "accesso ore 10.30",
                 chat: [{
                     textChat: "Oggi ho portato giu il cane",
@@ -57,6 +60,7 @@ var app = new Vue({
             {
                 nome: "Samuele",
                 img: "img/avatar_8.jpg",
+                /* display: true, */
                 data: "accesso ore 14.02",
                 chat: [{
                     textChat: "Bellaaaaaaaaaa",
@@ -116,12 +120,32 @@ var app = new Vue({
         resultQuery() {
             if (this.searchQuery) {
                 return this.contatti.filter((element) => {
-                    return this.searchQuery.toLowerCase().split().every(v => element.nome.toLowerCase().includes(v))
+                    return this.searchQuery.toLowerCase().split(' ').every(v => element.nome.toLowerCase().includes(v))
                 })
             } else {
                 return this.contatti;
             }
 
+         }
+    }
+});
+
+/*         resultQuery() {
+            this.contatti.forEach(element => {
+
+                if (this.element.nome.toLowerCase().includes(this.searchQuery.toLowerCase())) {
+                    element.display = true;
+
+                } else {
+                    element.display = false;
+                }
+            });
         }
     }
-});    
+}); */
+
+
+
+
+
+
