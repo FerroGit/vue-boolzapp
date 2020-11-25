@@ -116,7 +116,7 @@ var app = new Vue({
         resultQuery() {
             if (this.searchQuery) {
                 return this.contatti.filter((element) => {
-                    return this.searchQuery.toLowerCase().split('').every(v => element.nome.toLowerCase().includes(v))
+                    return this.searchQuery.toLowerCase().split().every(v => element.nome.toLowerCase().includes(v))
                 })
             } else {
                 return this.contatti;
