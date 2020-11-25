@@ -115,20 +115,19 @@ var app = new Vue({
             }, 0)
         },
 
-  /*   },
-    computed: {
-        resultQuery() {
-            if (this.searchQuery) {
-                return this.contatti.filter((element) => {
-                    return this.searchQuery.toLowerCase().split().every(v => element.nome.toLowerCase().includes(v))
-                })
-            } else {
-                return this.contatti;
-            }
-
-         }
-    }
-}); */
+        /*   },
+          computed: {
+              resultQuery() {
+                  if (this.searchQuery) {
+                      return this.contatti.filter((element) => {
+                          return this.searchQuery.toLowerCase().split().every(v => element.nome.toLowerCase().includes(v))
+                      })
+                  } else {
+                      return this.contatti;
+                  }
+               }
+          }
+      }); */
 
         resultQuery() {
             this.contatti.forEach(e => {
@@ -143,9 +142,3 @@ var app = new Vue({
         }
     }
 });
-
-
-
-
-
-

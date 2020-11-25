@@ -51,17 +51,16 @@
                     <form action="/action_page.php">
                         <div class="container-search">
                             <a href=""><i class="fa fa-search"></i></a>
-                            <input  type="text" placeholder="Cerca o inizia una nuova chat" class="form-control" @keyup="resultQuery" v-model="searchQuery"> <!-- v-model="resultQuery()" -->
+                            <input type="text" placeholder="Cerca o inizia una nuova chat" class="form-control"
+                                @keyup="resultQuery" v-model="searchQuery"> <!-- v-model="resultQuery()" -->
                         </div>
                     </form>
                 </div>
 
                 <!-- chats  section -->
                 <div class="chat-section">
-                    <div :class="['contatto', index === indexContatti ? 'active' : '']" 
-                        v-for="(element, index) in contatti"
-                        @click = "contactActive(index)"
-                        v-if="element.display">
+                    <div :class="['contatto', index === indexContatti ? 'active' : '']" v-for="(element, index) in contatti"
+                        @click="contactActive(index)" v-if="element.display">
                         <img :src="element.img" alt="#">
                         <div class="text-chatUtente">
                             <p><strong class=""></strong>{{element.nome}}</p>
@@ -77,7 +76,7 @@
 
 
             <!--PARTE DX  -->
-            <main >
+            <main>
                 <!-- TOP BAR  -->
                 <section class="top-bar">
                     <div class="chat-open">
@@ -98,7 +97,7 @@
                 <!-- SECTION CHAT ROOM  -->
                 <section id="container-chat" class="chat-box">
 
-                    <div  v-for="(element,index) in contatti[indexContatti].chat" :class="element.typeMessage">
+                    <div v-for="(element,index) in contatti[indexContatti].chat" :class="element.typeMessage">
                         <span>{{element.textChat}}</span>
                         <div class="data-timing chat">
                             {{element.dataChat}}
@@ -114,6 +113,18 @@
                     </div>
 
                 </section>
+
+                <!-- SECTION WRITE MESSAGE  -->
+                <section class="text-area">
+                    <i class="far fa-smile"></i>
+                    <input type="text" spaceholder="scrivi un messaggio" v-model="textArea" @keydown.enter="addMessage">
+                    <i class="fas fa-microphone" @click="addMessage"></i>
+                </section>
+
+            </main>
+        </div>
+        <script src='js/script.js'></script>
+    </body>
 
                 <!-- SECTION WRITE MESSAGE  -->
                 <section class="text-area">
