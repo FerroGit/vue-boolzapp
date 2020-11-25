@@ -27,7 +27,7 @@
                     </div>
 
 
-                    
+
                     <div class="icon">
                         <i class="fas fa-circle-notch"></i>
                         <i class="fas fa-comment-alt"></i>
@@ -51,7 +51,7 @@
                     <form action="/action_page.php">
                         <div class="container-search">
                             <a href=""><i class="fa fa-search"></i></a>
-                            <input  type="text" placeholder="Cerca o inizia una nuova chat" class="form-control" v-model="searchQuery"> <!-- v-model="resultQuery()" -->
+                            <input  type="text" placeholder="Cerca o inizia una nuova chat" class="form-control" @keyup="resultQuery" v-model="searchQuery"> <!-- v-model="resultQuery()" -->
                         </div>
                     </form>
                 </div>
@@ -59,8 +59,9 @@
                 <!-- chats  section -->
                 <div class="chat-section">
                     <div :class="['contatto', index === indexContatti ? 'active' : '']" 
-                        v-for="(element, index) in resultQuery"
-                        @click = "contactActive(index)">
+                        v-for="(element, index) in contatti"
+                        @click = "contactActive(index)"
+                        v-if="element.display">
                         <img :src="element.img" alt="#">
                         <div class="text-chatUtente">
                             <p><strong class=""></strong>{{element.nome}}</p>
@@ -80,10 +81,10 @@
                 <!-- TOP BAR  -->
                 <section class="top-bar">
                     <div class="chat-open">
-                        <img :src="resultQuery[indexContatti].img" alt="">
+                        <img :src="contatti[indexContatti].img" alt="">
                         <div class="text-chatAperta">
-                            <p><strong>{{resultQuery[indexContatti].nome}}</strong></p>
-                            <p>{{resultQuery[indexContatti].data}}</p>
+                            <p><strong>{{contatti[indexContatti].nome}}</strong></p>
+                            <p>{{contatti[indexContatti].data}}</p>
                         </div>
                     </div>
 
