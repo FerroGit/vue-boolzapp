@@ -152,7 +152,7 @@ aside{
 }
 
 .contatto:hover{
-    background-color:  rgb(211, 211, 211);
+    background-color:  rgb(236, 236, 236);
 }
 
 .chat-section img{
@@ -186,6 +186,10 @@ p strong:hover{
 }
 
 .active{
+    background-color: rgb(211, 211, 211);
+}
+
+.active:hover{
     background-color: rgb(211, 211, 211);
 }
 /* PARTE DX */
