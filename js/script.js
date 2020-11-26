@@ -15,11 +15,13 @@ var app = new Vue({
                 chat: [{
                     textChat: "Hai parlato con tua moglie?",
                     dataChat: "13.05",
+                    drop: false,
                     typeMessage: "recived"
                 },
                 {
                     textChat: "no",
                     dataChat: "13.30",
+                    drop: false,
                     typeMessage: "send"
                 }]
             },
@@ -32,12 +34,14 @@ var app = new Vue({
                 chat: [{
                     textChat: "Se oggi non glielo dici è F-I-N-I-T-A !!!!",
                     dataChat: "13.50",
+                    drop: false,
                     typeMessage: "recived"
                 },
 
                 {
                     textChat: "Mo vediamo, damme nattimoooooooo",
                     dataChat: "14.06",
+                    drop: false,
                     typeMessage: "send"
                 }]
             },
@@ -49,11 +53,13 @@ var app = new Vue({
                 chat: [{
                     textChat: "Oggi ho portato giu il cane",
                     dataChat: "10.30",
+                    drop: false,
                     typeMessage: "recived"
                 },
                 {
                     textChat: "Ok",
                     dataChat: "11.00",
+                    drop: false,
                     typeMessage: "send"
                 }]
             },
@@ -65,21 +71,25 @@ var app = new Vue({
                 chat: [{
                     textChat: "Bellaaaaaaaaaa",
                     dataChat: "11.50",
+                    drop: false,
                     typeMessage: "send"
                 },
                 {
                     textChat: "Ao",
                     dataChat: "12.47",
+                    drop: false,
                     typeMessage: "send"
                 },
                 {
                     textChat: "che voi",
                     dataChat: "13.12",
+                    drop: false,
                     typeMessage: "recived"
                 },
                 {
                     textChat: "nnamo dal bangla alle 4?",
                     dataChat: "14.01",
+                    drop: false,
                     typeMessage: "send"
                 }]
             },
@@ -114,22 +124,6 @@ var app = new Vue({
                 overflow.scrollTop = overflow.scrollHeight;
             }, 0)
         },
-
-  /*   },
-    computed: {
-        resultQuery() {
-            if (this.searchQuery) {
-                return this.contatti.filter((element) => {
-                    return this.searchQuery.toLowerCase().split().every(v => element.nome.toLowerCase().includes(v))
-                })
-            } else {
-                return this.contatti;
-            }
-
-         }
-    }
-}); */
-
         resultQuery() {
             this.contatti.forEach(e => {
 
@@ -140,10 +134,36 @@ var app = new Vue({
                     e.display = false;
                 }
             });
+        },
+        dropdownMenu: function (e) {
+            if (this.contatti[this.indexContatti].chat[e].drop === false) {
+                this.contatti[this.indexContatti].chat[e].drop = true;
+            } else {
+                this.contatti[this.indexContatti].chat[e].drop = false;
+            }
+        },
+
+        deleteMsg: function (e) {
+            this.contatti[this.indexContatti].chat.splice(e, 1);
         }
     }
 });
 
+
+/*   },
+   computed: {
+       resultQuery() {
+           if (this.searchQuery) {
+               return this.contatti.filter((element) => {
+                   return this.searchQuery.toLowerCase().split().every(v => element.nome.toLowerCase().includes(v))
+               })
+           } else {
+               return this.contatti;
+           }
+
+        }
+   }
+}); */
 
 
 

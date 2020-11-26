@@ -104,12 +104,12 @@
                             {{element.dataChat}}
                         </div>
                         <div class="info-message">
-                            <i class="fas fa-chevron-down"></i>
+                            <i class="fas fa-chevron-down" @click='dropdownMenu(index)'></i>
                         </div>
-                        <ul class="dropdown">
-                            <li>Info Messaggio </li>
+                        <ul class="dropdown" :class="{block : element.drop}">
+                            <li>Info Messaggio</li>
                             <li>Rispondi</li>
-                            <li>Cancella Messaggio</li>
+                            <li @click='deleteMsg(index)'>Cancella Messaggio</li>
                         </ul>
                     </div>
 
