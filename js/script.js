@@ -124,6 +124,24 @@ var app = new Vue({
                 overflow.scrollTop = overflow.scrollHeight;
             }, 0)
         },
+<<<<<<< HEAD
+=======
+
+        /*   },
+          computed: {
+              resultQuery() {
+                  if (this.searchQuery) {
+                      return this.contatti.filter((element) => {
+                          return this.searchQuery.toLowerCase().split().every(v => element.nome.toLowerCase().includes(v))
+                      })
+                  } else {
+                      return this.contatti;
+                  }
+               }
+          }
+      }); */
+
+>>>>>>> main
         resultQuery() {
             this.contatti.forEach(e => {
 
@@ -148,6 +166,7 @@ var app = new Vue({
         }
     }
 });
+<<<<<<< HEAD
 
 
 /*   },
@@ -169,3 +188,5 @@ var app = new Vue({
 
 
 
+=======
+>>>>>>> main
