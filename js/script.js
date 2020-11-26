@@ -143,8 +143,8 @@ var app = new Vue({
             }
         },
 
-        deleteMsg: function (e) {
-            this.contatti[this.indexContatti].chat.splice(e, 1);
+        deleteMsg: function (i) {
+            this.contatti[this.indexContatti].chat.splice(i, 1);
         }
     }
 });
