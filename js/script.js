@@ -104,6 +104,7 @@ var app = new Vue({
             this.contatti[this.indexContatti].chat.push({
                 textChat: this.textArea,
                 dataChat: "16.02",
+                drop: false,
                 typeMessage: "send"
             });
             this.textArea = "";
@@ -113,6 +114,7 @@ var app = new Vue({
                 this.contatti[this.indexContatti].chat.push({
                     textChat: this.defaultMessage[Math.floor(Math.random() * this.defaultMessage.length)],
                     dataChat: "16.02",
+                    drop: false,
                     typeMessage: 'recived'
                 });
                 this.scrollToEnd();
