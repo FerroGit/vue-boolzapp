@@ -144,9 +144,23 @@ var app = new Vue({
                 this.contatti[this.indexContatti].chat[e].drop = false;
             }
         },
-
         deleteMsg: function (i) {
             this.contatti[this.indexContatti].chat.splice(i, 1);
+            if (){
+                this.contatti[this.indexContatti].chat.push({
+                    textChat: "Message delete",
+                    dataChat: "16.02",
+                    drop: false,
+                    typeMessage: "send"
+                });
+            } else {
+                this.contatti[this.indexContatti].chat.push({
+                    textChat: "Message delete",
+                    dataChat: "16.02",
+                    drop: false,
+                    typeMessage: "recived"
+                });
+            }    
         }
     }
 });
