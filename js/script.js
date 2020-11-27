@@ -103,7 +103,7 @@ var app = new Vue({
         addMessage: function () {
             this.contatti[this.indexContatti].chat.push({
                 textChat: this.textArea,
-                dataChat: "16.02",
+                dataChat: this.getTime(),
                 drop: false,
                 typeMessage: "send"
             });
@@ -113,7 +113,7 @@ var app = new Vue({
             setTimeout(() => {
                 this.contatti[this.indexContatti].chat.push({
                     textChat: this.defaultMessage[Math.floor(Math.random() * this.defaultMessage.length)],
-                    dataChat: "16.02",
+                    dataChat: this.getTime(),
                     drop: false,
                     typeMessage: 'recived'
                 });
@@ -137,6 +137,13 @@ var app = new Vue({
                 }
             });
         },
+        getTime: function () {
+            let today = new Date();
+            let date = (today.getMonth() + 1) + '/' + today.getFullYear();
+            let time = today.getHours() + ":" + today.getMinutes();
+            let dateTime = time + ' ' + date;
+            return dateTime
+        },
         dropdownMenu: function (e) {
             if (this.contatti[this.indexContatti].chat[e].drop === false) {
                 this.contatti[this.indexContatti].chat[e].drop = true;
@@ -146,19 +153,15 @@ var app = new Vue({
         },
         deleteMsg: function (i) {
             this.contatti[this.indexContatti].chat.splice(i, 1);
-            if (){
+            if (this.contatti[this.indexContatti].typeMessage !== "send"){
                 this.contatti[this.indexContatti].chat.push({
-                    textChat: "Message delete",
-                    dataChat: "16.02",
-                    drop: false,
-                    typeMessage: "send"
+                    textChat: "Messaggio eliminato",
+                    typeMessage: "recived"
                 });
             } else {
                 this.contatti[this.indexContatti].chat.push({
-                    textChat: "Message delete",
-                    dataChat: "16.02",
-                    drop: false,
-                    typeMessage: "recived"
+                    textChat: "Messaggio eliminato",
+                    typeMessage: "send"
                 });
             }    
         }
